@@ -1,5 +1,5 @@
 const Discord  = require('discord.js');
-const hero     = new Discord.Client();
+const client     = new Discord.Client();
 const prefix   = "$";
 const category = "481470780782149633";
 const devs     = ["481470780782149633", "ID ANY FRIEND"];
@@ -14,7 +14,7 @@ client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
 }); 
 client.on('message',async message => {
-    const emojis   = { yes: `${client.guilds.find(r => r.id === '524287298871754777').emojis.find(e => e.name === 'Yes')}`, wrong: `${hero.guilds.find(r => r.id === '524287298871754777').emojis.find(e => e.name === 'Wrong')}` };
+    const emojis   = { yes: `${client.guilds.find(r => r.id === '524287298871754777').emojis.find(e => e.name === 'Yes')}`, wrong: `${client.guilds.find(r => r.id === '524287298871754777').emojis.find(e => e.name === 'Wrong')}` };
     if(message.author.bot || message.channel.type === 'dm') return;
     let args = message.content.split(" ");
     let author = message.author.id;
@@ -84,8 +84,8 @@ client.on('message',async message => {
 	} else if(args[0].toLowerCase() === `${prefix}restart`) {
 		if(!devs.includes(message.author.id)) return message.channel.send(`${emojis.wrong}, **أنت لست من ادارة السيرفر لأستخدام هذا الأمر.**`);
 		message.channel.send(`${emojis.yes}, **جارى اعادة تشغيل البوت.**`);
-		hero.destroy();
-		hero.login(process.env.ROYALE_TOKEN);
+		client.destroy();
+		client.login(process.env.ROYALE_TOKEN);
 	} else if(args[0].toLowerCase() === `${prefix}deletetickets`) {
 		let iq = 0;
 		for(let q = 0; q < tchannels.length; q++) {
