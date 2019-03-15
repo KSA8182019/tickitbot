@@ -19,6 +19,7 @@ client.on('message',async message => {
     let args = message.content.split(" ");
     let author = message.author.id;
     if(args[0].toLowerCase() === `${prefix}help`) {
+console.log("yup im here")
             let embed = new Discord.RichEmbed()
             .setAuthor(message.author.username, message.author.avatarURL)
             .setThumbnail(message.author.avatarURL)
