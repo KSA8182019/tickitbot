@@ -10,7 +10,7 @@ let current    = 0;
 client.login(process.env.BOT_TOKEN);
 
 client.on('ready', () => {
-  client.user.setActivity("Alpha The BeST", { type: "PLAYING"})
+  client.user.setActivity("$new", { type: "PLAYING"})
   console.log(`Logged in as ${client.user.tag}!`);
 }); 
 client.on('message',async message => {
@@ -103,4 +103,4 @@ client.on('message',async message => {
 });
 
 // ❯ , »
-client.login(process.env.BOT_TOKEN);
+
